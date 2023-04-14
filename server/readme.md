@@ -1,4 +1,4 @@
 # Readme
 
 - Initial folder structure
-- Initial environmental variables
+- Initial environmental variable
