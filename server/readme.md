@@ -5,6 +5,7 @@
 - Initial folder structure
 - Initial environmental variables
 - Atlas connected
+- created Schema
 
 ## NPMs
 
