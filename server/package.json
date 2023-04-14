@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Initial folder structure\r - Initial environmental variable",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.js"

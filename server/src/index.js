@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 
 const dev = require("./config");
+const connectDB = require("./config/db");
 
 const app = express();
 
@@ -16,4 +17,5 @@ app.get("/", (req, res) => {
 });
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+  connectDB();
 });

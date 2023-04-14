@@ -2,6 +2,7 @@
 
 - Initial folder structure
 - Initial environmental variable
+- Atlas connected
 
 ## NPMs
 
