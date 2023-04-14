@@ -1,7 +1,9 @@
 # Readme
 
+## Checklist
+
 - Initial folder structure
-- Initial environmental variable
+- Initial environmental variables
 - Atlas connected
 
 ## NPMs
@@ -11,3 +13,4 @@
 - morgan
 - nodemon
 - mongoose
+- validator
