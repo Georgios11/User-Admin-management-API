@@ -6,6 +6,12 @@
 - Initial environmental variables
 - Atlas connected
 - created Schema
+- created model
+- created register route
+- created register controller
+- password & image validation
+- verify email
+- secure the password
 
 ## NPMs
 
@@ -15,3 +21,7 @@
 - nodemon
 - mongoose
 - validator
+- body parser
+- express-formidable
+- bcrypt
+- jwt

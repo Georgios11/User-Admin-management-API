@@ -7,6 +7,7 @@ const userSchema = new Schema({
     required: [true, "Name is required"],
     minlength: [3, "Name minLength 3 characters "],
     maxlength: [44, "Name maximum length is 44 characters "],
+    lowercase: true,
   },
   email: {
     type: String,
@@ -47,3 +48,7 @@ const userSchema = new Schema({
     contentType: String,
   },
 });
+//create the model after the schema
+const User = model("users", userSchema);
+
+module.exports = User;
