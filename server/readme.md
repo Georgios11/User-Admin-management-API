@@ -12,6 +12,9 @@
 - password & image validation
 - verify email
 - secure the password
+- token created
+- private key created
+- install nodemailer
 
 ## NPMs
 
@@ -25,3 +28,4 @@
 - express-formidable
 - bcrypt
 - jwt
+- nodemailer

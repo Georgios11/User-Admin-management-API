@@ -1,5 +1,8 @@
 const jwt = require("jsonwebtoken");
 const { securePassword } = require("../helpers/securePassword");
+const dev = require("../config");
+const User = require("../models/user");
+const { sendEmailWithNodeMailer } = require("../helpers/email");
 
 const registerUser = async (req, res) => {
   try {
@@ -22,18 +25,39 @@ const registerUser = async (req, res) => {
         message: "Maximum image size is 1MB",
       });
     }
+
     const userExists = await User.findOne({ email: email });
     //store
-
-    //verification email to the user
+    //Synchronous Sign with RSA SHA256
+    console.log(email);
     if (userExists) {
       return res.status(400).json({
         message: "This email account is already registered",
       });
     }
     const hashedPassword = await securePassword(password);
-    res.status(201).json({
-      message: "User is created",
+    const token = jwt.sign(
+      { name, email, phone, hashedPassword, image },
+      dev.app.jwtSecretKey,
+      { expiresIn: "10m" }
+    );
+
+    //prepare the email
+
+    const emailData = {
+      email,
+      subject: "Account Activation",
+      html: `
+      <h2> Hello #{name}! </h2>
+      <p> Pleaxe click here to <a href="${dev.app.clientUrl}/api/users/activate/${token}" target="_blank"> activate your account </a></p>
+      `,
+    };
+    sendEmailWithNodeMailer(emailData);
+    //verification email to the user
+
+    res.status(200).json({
+      message: "A verification link has been sent ",
+      token,
     });
   } catch (error) {
     res.status(500).json({
