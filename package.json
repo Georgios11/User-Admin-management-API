@@ -4,7 +4,7 @@
   "description": "- Initial folder structure\r - Initial environmental variable",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon ./server/src/index.js"
   },
   "keywords": [],
   "author": "",

@@ -11,6 +11,9 @@ exports.sendEmailWithNodeMailer = async (emailData) => {
         user: dev.app.smtpUsername, // generated ethereal user
         pass: dev.app.smtpPassword, // generated ethereal password
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
     const mailOptions = {
       from: dev.app.smtpUsername, // sender address

@@ -49,7 +49,7 @@ const registerUser = async (req, res) => {
       subject: "Account Activation",
       html: `
       <h2> Hello #{name}! </h2>
-      <p> Pleaxe click here to <a href="${dev.app.clientUrl}/api/users/activate/${token}" target="_blank"> activate your account </a></p>
+      <p> Pleasee click here to <a href="${dev.app.clientUrl}/api/users/activate/${token}" target="_blank"> activate your account </a></p>
       `,
     };
     sendEmailWithNodeMailer(emailData);
