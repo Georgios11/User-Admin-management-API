@@ -15,6 +15,7 @@
 - token created
 - private key created
 - install nodemailer
+- email sent
 
 ## NPMs
 

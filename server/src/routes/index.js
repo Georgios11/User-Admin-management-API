@@ -1,7 +1,14 @@
 const formidable = require("express-formidable");
 const router = require("express").Router();
-const { registerUser } = require("../controllers/userController");
+const {
+  registerUser,
+  verifyEmail,
+  loginUser,
+  logoutUser,
+} = require("../controllers/userController");
 
 router.post("/register", formidable(), registerUser);
-
+router.post("/verify-email", verifyEmail);
+router.post("/login", loginUser);
+router.get("/logout", logoutUser);
 module.exports = router;
